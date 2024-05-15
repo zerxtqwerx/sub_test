@@ -1,0 +1,814 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8174194856963974664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769a151f07fb9064f9bbdfdcabc830b2, type: 3}
+  m_Name: CSG Primitive
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -156.2089, y: 864.2874}
+  ports:
+    keys:
+    - m_position
+    - m_voxel
+    values:
+    - _fieldName: m_position
+      _node: {fileID: -8174194856963974664}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: m_transformedPosition
+        node: {fileID: 8405349963593540991}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: m_voxel
+      _node: {fileID: -8174194856963974664}
+      _typeQualifiedName: Unity.Mathematics.float2, Unity.Mathematics, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_valueAndGradient
+        node: {fileID: 5041216398370506470}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  m_position: 0
+  m_voxel:
+    x: 0
+    y: 0
+  m_csgPrimitive:
+    m_primitiveType: 0
+--- !u!114 &-4624239686244355615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5429f6d037ac7344ba2d53d6f1eb48c, type: 3}
+  m_Name: Noise
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -392, y: 56}
+  ports:
+    keys:
+    - m_position
+    - m_valueAndGradient
+    values:
+    - _fieldName: m_position
+      _node: {fileID: -4624239686244355615}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: m_position
+        node: {fileID: 4009047971500637914}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: m_valueAndGradient
+      _node: {fileID: -4624239686244355615}
+      _typeQualifiedName: Unity.Mathematics.float2, Unity.Mathematics, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_valueAndGradient
+        node: {fileID: 2562849132004454162}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  m_position: 0
+  m_valueAndGradient:
+    x: 0
+    y: 0
+  m_noiseParameters:
+    m_seed: 0
+    m_noiseAxes: 1
+    m_noiseType: 0
+    m_numberOfOctaves: 1
+    m_initialAmplitude: 1
+    m_initialFrequency:
+      x: 0.01
+      y: 0.01
+      z: 0.01
+    m_persistence: 0
+    m_lacunarity:
+      x: 0
+      y: 0
+      z: 0
+--- !u!114 &-4183223074995079034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60cd43415ae3fa4190b870e0cab4484, type: 3}
+  m_Name: Position
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -840, y: 728}
+  ports:
+    keys:
+    - m_position
+    values:
+    - _fieldName: m_position
+      _node: {fileID: -4183223074995079034}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: m_position
+        node: {fileID: 8405349963593540991}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  m_position: 0
+--- !u!114 &-3971385173845277535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860e16ba61c44d242a823aca0c049d4d, type: 3}
+  m_Name: CSG Operation
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 392, y: 136}
+  ports:
+    keys:
+    - m_voxelA
+    - m_voxelB
+    - m_voxel
+    values:
+    - _fieldName: m_voxelA
+      _node: {fileID: -3971385173845277535}
+      _typeQualifiedName: Unity.Mathematics.float3, Unity.Mathematics, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_voxel
+        node: {fileID: 2562849132004454162}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: m_voxelB
+      _node: {fileID: -3971385173845277535}
+      _typeQualifiedName: Unity.Mathematics.float3, Unity.Mathematics, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_voxel
+        node: {fileID: 5041216398370506470}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: m_voxel
+      _node: {fileID: -3971385173845277535}
+      _typeQualifiedName: Unity.Mathematics.float3, Unity.Mathematics, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_voxel
+        node: {fileID: -3676775585213238522}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  m_voxelA:
+    x: 0
+    y: 0
+    z: 0
+  m_voxelB:
+    x: 0
+    y: 0
+    z: 0
+  m_voxel:
+    x: 0
+    y: 0
+    z: 0
+  m_csgOperator:
+    m_operatorIndex: 2
+    m_smoothing: 0
+--- !u!114 &-3676775585213238522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6143c49c27dd9429b9157a3f6baa1e, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 744, y: -184}
+  ports:
+    keys:
+    - m_voxel
+    values:
+    - _fieldName: m_voxel
+      _node: {fileID: -3676775585213238522}
+      _typeQualifiedName: Unity.Mathematics.float3, Unity.Mathematics, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_voxel
+        node: {fileID: -3971385173845277535}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  m_voxel:
+    x: 0
+    y: 0
+    z: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987600d458a9fdb48b2e0fb8507659eb, type: 3}
+  m_Name: Generation2
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -3676775585213238522}
+  - {fileID: 4009047971500637914}
+  - {fileID: 2562849132004454162}
+  - {fileID: -4624239686244355615}
+  - {fileID: -4183223074995079034}
+  - {fileID: 8405349963593540991}
+  - {fileID: -8174194856963974664}
+  - {fileID: 5041216398370506470}
+  - {fileID: -3971385173845277535}
+  m_nodes:
+  - m_nodeType: 0
+    m_transformMatrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_noiseParameters:
+      m_seed: 0
+      m_noiseAxes: 0
+      m_noiseType: 0
+      m_numberOfOctaves: 0
+      m_initialAmplitude: 0
+      m_initialFrequency:
+        x: 0
+        y: 0
+        z: 0
+      m_persistence: 0
+      m_lacunarity:
+        x: 0
+        y: 0
+        z: 0
+    m_csgPrimitive:
+      m_primitiveType: 0
+    m_materialIndex: 0
+    m_csgOperator:
+      m_operatorIndex: 0
+      m_smoothing: 0
+  - m_nodeType: 3
+    m_transformMatrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_noiseParameters:
+      m_seed: 0
+      m_noiseAxes: 1
+      m_noiseType: 0
+      m_numberOfOctaves: 1
+      m_initialAmplitude: 1
+      m_initialFrequency:
+        x: 0.01
+        y: 0.01
+        z: 0.01
+      m_persistence: 0
+      m_lacunarity:
+        x: 0
+        y: 0
+        z: 0
+    m_csgPrimitive:
+      m_primitiveType: 0
+    m_materialIndex: 0
+    m_csgOperator:
+      m_operatorIndex: 0
+      m_smoothing: 0
+  - m_nodeType: 5
+    m_transformMatrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_noiseParameters:
+      m_seed: 0
+      m_noiseAxes: 0
+      m_noiseType: 0
+      m_numberOfOctaves: 0
+      m_initialAmplitude: 0
+      m_initialFrequency:
+        x: 0
+        y: 0
+        z: 0
+      m_persistence: 0
+      m_lacunarity:
+        x: 0
+        y: 0
+        z: 0
+    m_csgPrimitive:
+      m_primitiveType: 0
+    m_materialIndex: 1
+    m_csgOperator:
+      m_operatorIndex: 0
+      m_smoothing: 0
+  - m_nodeType: 0
+    m_transformMatrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_noiseParameters:
+      m_seed: 0
+      m_noiseAxes: 0
+      m_noiseType: 0
+      m_numberOfOctaves: 0
+      m_initialAmplitude: 0
+      m_initialFrequency:
+        x: 0
+        y: 0
+        z: 0
+      m_persistence: 0
+      m_lacunarity:
+        x: 0
+        y: 0
+        z: 0
+    m_csgPrimitive:
+      m_primitiveType: 0
+    m_materialIndex: 0
+    m_csgOperator:
+      m_operatorIndex: 0
+      m_smoothing: 0
+  - m_nodeType: 1
+    m_transformMatrix:
+      e00: 0.0025
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0.0025
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0.0025
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_noiseParameters:
+      m_seed: 0
+      m_noiseAxes: 0
+      m_noiseType: 0
+      m_numberOfOctaves: 0
+      m_initialAmplitude: 0
+      m_initialFrequency:
+        x: 0
+        y: 0
+        z: 0
+      m_persistence: 0
+      m_lacunarity:
+        x: 0
+        y: 0
+        z: 0
+    m_csgPrimitive:
+      m_primitiveType: 0
+    m_materialIndex: 0
+    m_csgOperator:
+      m_operatorIndex: 0
+      m_smoothing: 0
+  - m_nodeType: 4
+    m_transformMatrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_noiseParameters:
+      m_seed: 0
+      m_noiseAxes: 0
+      m_noiseType: 0
+      m_numberOfOctaves: 0
+      m_initialAmplitude: 0
+      m_initialFrequency:
+        x: 0
+        y: 0
+        z: 0
+      m_persistence: 0
+      m_lacunarity:
+        x: 0
+        y: 0
+        z: 0
+    m_csgPrimitive:
+      m_primitiveType: 0
+    m_materialIndex: 0
+    m_csgOperator:
+      m_operatorIndex: 0
+      m_smoothing: 0
+  - m_nodeType: 5
+    m_transformMatrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_noiseParameters:
+      m_seed: 0
+      m_noiseAxes: 0
+      m_noiseType: 0
+      m_numberOfOctaves: 0
+      m_initialAmplitude: 0
+      m_initialFrequency:
+        x: 0
+        y: 0
+        z: 0
+      m_persistence: 0
+      m_lacunarity:
+        x: 0
+        y: 0
+        z: 0
+    m_csgPrimitive:
+      m_primitiveType: 0
+    m_materialIndex: 1
+    m_csgOperator:
+      m_operatorIndex: 0
+      m_smoothing: 0
+  - m_nodeType: 6
+    m_transformMatrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_noiseParameters:
+      m_seed: 0
+      m_noiseAxes: 0
+      m_noiseType: 0
+      m_numberOfOctaves: 0
+      m_initialAmplitude: 0
+      m_initialFrequency:
+        x: 0
+        y: 0
+        z: 0
+      m_persistence: 0
+      m_lacunarity:
+        x: 0
+        y: 0
+        z: 0
+    m_csgPrimitive:
+      m_primitiveType: 0
+    m_materialIndex: 0
+    m_csgOperator:
+      m_operatorIndex: 2
+      m_smoothing: 0
+  - m_nodeType: 7
+    m_transformMatrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_noiseParameters:
+      m_seed: 0
+      m_noiseAxes: 0
+      m_noiseType: 0
+      m_numberOfOctaves: 0
+      m_initialAmplitude: 0
+      m_initialFrequency:
+        x: 0
+        y: 0
+        z: 0
+      m_persistence: 0
+      m_lacunarity:
+        x: 0
+        y: 0
+        z: 0
+    m_csgPrimitive:
+      m_primitiveType: 0
+    m_materialIndex: 0
+    m_csgOperator:
+      m_operatorIndex: 0
+      m_smoothing: 0
+--- !u!114 &2562849132004454162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e2bd3a7378b0a48bc020065a879054, type: 3}
+  m_Name: Material
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -40, y: 168}
+  ports:
+    keys:
+    - m_valueAndGradient
+    - m_voxel
+    values:
+    - _fieldName: m_valueAndGradient
+      _node: {fileID: 2562849132004454162}
+      _typeQualifiedName: Unity.Mathematics.float2, Unity.Mathematics, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_valueAndGradient
+        node: {fileID: -4624239686244355615}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: m_voxel
+      _node: {fileID: 2562849132004454162}
+      _typeQualifiedName: Unity.Mathematics.float3, Unity.Mathematics, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_voxelA
+        node: {fileID: -3971385173845277535}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  m_valueAndGradient:
+    x: 0
+    y: 0
+  m_voxel:
+    x: 0
+    y: 0
+    z: 0
+  m_materialIndex: 1
+--- !u!114 &4009047971500637914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60cd43415ae3fa4190b870e0cab4484, type: 3}
+  m_Name: Position
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -824, y: -8}
+  ports:
+    keys:
+    - m_position
+    values:
+    - _fieldName: m_position
+      _node: {fileID: 4009047971500637914}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: m_position
+        node: {fileID: -4624239686244355615}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  m_position: 0
+--- !u!114 &5041216398370506470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e2bd3a7378b0a48bc020065a879054, type: 3}
+  m_Name: Material
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 200.16602, y: 827.85565}
+  ports:
+    keys:
+    - m_valueAndGradient
+    - m_voxel
+    values:
+    - _fieldName: m_valueAndGradient
+      _node: {fileID: 5041216398370506470}
+      _typeQualifiedName: Unity.Mathematics.float2, Unity.Mathematics, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_voxel
+        node: {fileID: -8174194856963974664}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: m_voxel
+      _node: {fileID: 5041216398370506470}
+      _typeQualifiedName: Unity.Mathematics.float3, Unity.Mathematics, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_voxelB
+        node: {fileID: -3971385173845277535}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  m_valueAndGradient:
+    x: 0
+    y: 0
+  m_voxel:
+    x: 0
+    y: 0
+    z: 0
+  m_materialIndex: 1
+--- !u!114 &8405349963593540991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad4100241decd24fa79ae010bc6f528, type: 3}
+  m_Name: Transform
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -536, y: 808}
+  ports:
+    keys:
+    - m_position
+    - m_transformedPosition
+    values:
+    - _fieldName: m_position
+      _node: {fileID: 8405349963593540991}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: m_position
+        node: {fileID: -4183223074995079034}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: m_transformedPosition
+      _node: {fileID: 8405349963593540991}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: m_position
+        node: {fileID: -8174194856963974664}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  m_position: 0
+  m_transformedPosition: 0
+  m_translation:
+    x: 0
+    y: 0
+    z: 0
+  m_rotation:
+    x: 0
+    y: 0
+    z: 0
+  m_scale:
+    x: 400
+    y: 400
+    z: 400
+  m_invert: 1
