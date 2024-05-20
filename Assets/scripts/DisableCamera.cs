@@ -13,4 +13,4 @@ public class DisableCamera : NetworkBehaviour
             camera.SetActive(false);
         }
     }
-}
+}//
